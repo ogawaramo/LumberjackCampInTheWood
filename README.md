@@ -136,49 +136,49 @@ Assets/Scenes/WoodcutterCamp.unity を開く
 このリポジトリの設計・実装方針は `docs/` 以下のドキュメントで管理しています。  
 開発を進める前に、少なくとも PRD / FSD / TDD / TSD には一度目を通してください。
 
-- `docs/PLAN.md`  
+- [`docs/PLAN.md`](docs/PLAN.md)
   - プロジェクト全体のコンセプト・体験ゴール・マップ構成・MVP/拡張ロードマップをまとめた企画レベルの計画書です。
   - 「森のきこりキャンプ」がどんなワールドになるのかを短時間で把握したいときに参照します。
 
-- `docs/PRD.md` / `docs/PRDv3.md`  
+- [`docs/PRD.md`](docs/PRD.md)
   - Phase 1 の **プロダクト要件定義書 (Product Requirements Document)**。ターゲット、KPI、ゲームデザインの詳細（木・斧・XP・コインテーブルなど）を定義しています。
   - 実装に迷ったときは「プレイヤーにどんな体験を提供したいか」をここで確認します。
 
-- `docs/FSD.md`  
-  - 機能仕様書 (Functional Specification Document)。  
+- [`docs/FSD.md`](docs/FSD.md)
+  - 機能仕様書 (Functional Specification Document)。
     FNC-001〜006（伐採・運搬・加工・成長・経済・協力）の各機能について、振る舞い・シナリオ・正常系/異常系を具体的に記述しています。
   - UdonSharp 実装前に「この機能は何をすべきか？」を確認するための一次情報です。
 
-- `docs/TSD.md`  
-  - 技術仕様書 (Technical Specification Document)。  
+- [`docs/TSD.md`](docs/TSD.md)
+  - 技術仕様書 (Technical Specification Document)。
     UdonSharp / PlayerData / UdonSynced を前提としたアーキテクチャ、データモデル、同期戦略、パフォーマンス要件を定義しています。
   - 新しいスクリプトやネットワーク同期を追加する際は、ここに沿って設計してください。
 
-- `docs/TDD.md`  
-  - Technical Design Document。  
+- [`docs/TDD.md`](docs/TDD.md)
+  - Technical Design Document。
     モジュール (M-01〜) と機能 (F-xx) を実装単位にブレイクダウンし、Work Instruction（作業指示書）に落とし込むための中間設計です。
   - 「どのモジュールがどの責務を持つか」「どのWIを先に実装すべきか」を確認する場です。
 
-- `docs/REF.md`  
-  - VRChat SDK / UdonSharp /周辺ツールのリファレンスマニュアル。  
+- [`docs/REF.md`](docs/REF.md)
+  - VRChat SDK / UdonSharp /周辺ツールのリファレンスマニュアル。
     プロジェクト内でよく使う API やツールのリンク・要約をまとめています。
   - 公式ドキュメントを毎回検索する手間を減らすためのカタログとして使います。
 
-- `docs/TECHNICAL_DETAILS.md` / `docs/VRChat_TechResearch_2025.md` / `docs/VRChat_Tools_API_Reference.md`  
-  - VRChat・UdonSharp の最新仕様・制約・ベストプラクティスの調査結果。  
+- [`docs/TECHNICAL_DETAILS.md`](docs/TECHNICAL_DETAILS.md) / [`docs/VRChat_TechResearch_2025.md`](docs/VRChat_TechResearch_2025.md) / [`docs/VRChat_Tools_API_Reference.md`](docs/VRChat_Tools_API_Reference.md)
+  - VRChat・UdonSharp の最新仕様・制約・ベストプラクティスの調査結果。
   - SDK や UdonSharp のバージョンアップを検討する際や、「この構文は UdonSharp で使えるか？」を確認したいときに参照します。
 
-#### Work Instruction (`docs/WID/`)
+#### Work Instruction ([`docs/WID/`](docs/WID/))
 
-実際の Unity 作業は、`docs/WID/` 以下の **作業指示書 (Work Instruction / WI)** に分解されています。  
+実際の Unity 作業は、[`docs/WID/`](docs/WID/) 以下の **作業指示書 (Work Instruction / WI)** に分解されています。
 各ファイルは 1 つのタスク（1〜2日分）に対応し、「何を・どの順番で・どう確認するか」が具体的に書かれています。
 
-- `docs/WID/PHASE-00_TASK-0001.md`  
-  - **M-01 GameManager** の実装手順書。  
+- [`docs/WID/WI-0001_GameManager.md`](docs/WID/WI-0001_GameManager.md)
+  - **M-01 GameManager** の実装手順書。
     `GameManager.cs` の作成、プレハブ化、シーン配置、ログ確認までの手順と Done 条件が定義されています。
   - Phase 0（基盤実装）の最初のタスクであり、他のモジュール（NetworkSync, PersistenceManager など）はこの GameManager を前提に作られます。
 
-今後も Phase / Task ごとに `docs/WID/PHASE-XX_TASK-YYYY.md` が増えていきます。  
+全25個の作業指示書（WI-0001〜WI-0025）が Phase 0〜3 に分けて定義されています。
 **Unity 上で作業を始める前に、必ず該当 WI を開いて「前提条件・手順・完了条件」を確認する**運用を想定しています。
 
 ### アーキテクチャ
